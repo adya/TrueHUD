@@ -15,7 +15,7 @@ const char* NPCNameProvider::GetName(RE::Actor* actor) const
 void NPCNameProvider::RequestAPI()
 {
 	if (!NND) {
-		NND = static_cast<NND_API::IVNND1*>(NND_API::RequestPluginAPI(NND_API::InterfaceVersion::kV1));
+		NND = static_cast<NND_API::IVNND1*>(NND_API::RequestPluginAPI(NND_API::InterfaceVersion::kV2));
 		if (NND) {
 			logger::info("Obtained NND API - {0:x}", reinterpret_cast<uintptr_t>(NND));
 		} else {
